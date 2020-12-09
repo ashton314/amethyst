@@ -47,9 +47,6 @@
 
 (global-auto-revert-mode)
 
-;; Initial frame
-(setq default-frame-alist '((width . 87) (height . 60) (vertical-scroll-bars)))
-
 ;; Auto-save stuffs
 (setq auto-save-default nil)
 (auto-save-visited-mode +1)
@@ -88,3 +85,64 @@
     (insert "\n*Warning: this is a temporary scratch pad!*\n\nIf you want to save what you wrote after quitting, you need to [[elisp:write-file][save this as a new file]] (keystroke: =[C-x] [C-w]=)\n\n")
     (switch-to-buffer buff)
     (message "Switched to a temporary scratchpad")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Startup
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq default-frame-alist '((width . 87) (height . 60) (vertical-scroll-bars)))
+
+(defvar writer-startup-message
+  "
+
+
+                           _Welcome to Emacs_
+
+
+
+                             *Quick Links*
+
+[[elisp:find-file][Create a new file]]        [[elisp:find-file-existing][Open an existing file]]        [[elisp:scratchpad][Open a scratchpad]]
+
+
+
+*Essential commands*                             /C: Control, M: alt, S: ⌘/
+
+  Save ............... =[C-x]= =[C-s]=    Help ..................... =[C-h]=
+  Save as ............ =[C-x]= =[C-w]=    Cancel ................... =[C-g]=
+  Open a new file .... =[C-x]= =[C-f]=    Undo ..................... =[C-/]=
+  Browse directory ..... =[C-x]= =[d]=    Quit ............... =[C-x]= =[C-c]= 
+
+
+*Other commands*                                     /[[info:emacs#Key%2520Bindings][ Other key bindings ]]/
+
+  Search ................... =[C-s]=    Go to line ......... =[M-g]= =[M-g]=
+  Replace .................. =[M-%]=    Execute .................. =[M-x]=
+  
+  Start of buffer .......... =[M-<]=    End of buffer ............ =[M->]=
+  Start of line ............ =[C-a]=    End of line .............. =[C-e]=
+
+  Mark ................... =[C-spc]=    Copy from mark............ =[M-w]=
+  Kill from mark............ =[C-w]=    Kill from cursor.......... =[C-k]=
+  Paste .................... =[C-y]=    Paste older ........ =[C-y]= =[M-y]=
+
+*Quick preferences*                                    /[[elisp:(customize-group%20'emacs)][ Full preferences ]]/
+
+ [[elisp:menu-set-font][ Select ]]default font                [[elisp:display-line-numbers-mode][ Toggle ]]line numbers
+ [[elisp:tool-bar-mode][ Toggle ]]tool bar                    [[elisp:toggle-truncate-lines][ Toggle ]]line wrap
+ [[elisp:scroll-bar-mode][ Toggle ]]scroll bar                  [[elisp:blink-cursor-mode][ Toggle ]]blinking cursor
+ [[elisp:menu-bar-mode][ Toggle ]]menu bar                     Select cursor:[[elisp:(set-default%20'cursor-type%20%20'(hbar%20.%202))][ HBar ]]|[[elisp:(set-default%20'cursor-type%20%20'(bar%20.%202))][ VBar ]]|[[elisp:(set-default%20'cursor-type%20'box)][ Box ]]
+")
+
+(org-mode)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(enable-recursive-minibuffers t)
+ '(find-file-visit-truename t)
+ '(frame-resize-pixelwise t)
+ '(initial-major-mode 'text-mode)
+ '(initial-scratch-message writer-startup-message))
