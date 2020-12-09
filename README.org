@@ -1,0 +1,46 @@
+#+TITLE: Emacs Writer
+
+Writing should be all about the words. But word processors like MS Word, Google Docs, or Apple's Pages force you to think about formatting as you compose.
+
+Emacs is the most powerful text editor in the world. Beyond this, it's infinitely customizable. It's also [[https://www.fsf.org/about/what-is-free-software][Free/Libre Software]]. So why don't writers use it more? The default Emacs settings are a little difficult for non-technical users to get accustomed to. This setup aims to make the transition to Emacs a little easier.
+
+* Installation
+
+ 1. Get yourself [[https://www.gnu.org/software/emacs/][Emacs]]
+ 2. Download this repository
+ 3. Load [[file:writer_entry.el][writer_entry.el]] in your =~/.emacs=
+
+*NOTE:* These instructions will improve over time; if you need help, please just [[https://github.com/ashton314/emacs-writer/issues/new][open an issue]] or send me an email. (See the [[Author]] section.)
+
+* Description
+
+This started out as a few tweaks to [[https://github.com/rougier/elegant-emacs][elegant-emacs]], but it grew into a more comprehensive set of changes that I thought would be good to break out into its own package.
+
+Features:
+
+ - Clean, distraction-free theme (Elegant Emacs, Nord)
+ - Common keybindings that most users are familiar with (CUA-mode)
+ - Starter set of packages to make Emacs a little nicer to use
+
+* History
+
+My wife is a writer, and I wanted to help Emacs be less intimidating for her to use.
+
+I think using Free/Libre software is the ideal—I use it whenever I can—and Emacs is in some respects the FSF and GNU's flagship program. Emacs is what brought me to use free software, and I want to help others experience the joys of free software.
+
+Most free software requires some detailed knowledge of computers to use effectively. There are plenty of memes about Arch Linux being difficult to use unless you really know what you're doing. I don't have a problem with this /per se/; these are power tools built for power users.
+
+But if we want to help spread free software in the world, then we should try to make some of that software more user-friendly so that people who don't want to tweak their configuration and just have things /work/ so they can get their work done. This package is my small contribution to that effort.
+
+* Author
+
+Emacs Writer: Ashton Wiersdorf
+
+Elegant Emacs: Nicolas P. Rougier
+
+* See Also
+
+ - [[https://www.gnu.org/][The GNU Project]]
+ - [[https://www.gnu.org/software/emacs/][The Emacs Homepage]]
+
+This package is derived from Nicolas P. Rougier's beautiful [[https://github.com/rougier/elegant-emacs][elegant-emacs]] package. I also uses the 
