@@ -31,7 +31,11 @@
 (setq initial-scratch-message nil)
 (setq initial-major-mode 'org-mode)
 (setq-default indent-tabs-mode nil)
+
+;; Don't make new windows pop up. Kind of messes up Magit, but we can
+;; work around that.
 (setq pop-up-windows nil)
+
 (tool-bar-mode 0)
 (tooltip-mode  0)
 (scroll-bar-mode 0)
@@ -39,6 +43,7 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
+;; Keep the cursor where you last were when you were editing the file
 (save-place-mode 1)
 
 (global-set-key (kbd "C-z") 'undo)
@@ -297,7 +302,9 @@
 ;; Startup
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq default-frame-alist '((width . 87) (height . 60) (vertical-scroll-bars)))
+(setq default-frame-alist '((width . 80) (height . 30) (fullscreen . fullheight)))
+
+(setq org-confirm-elisp-link-function nil)
 
 (defvar writer-startup-message
   "
@@ -312,13 +319,12 @@
 [[elisp:find-file][Create a new file]]        [[elisp:find-file-existing][Open an existing file]]        [[elisp:scratchpad][Open a scratchpad]]
 
 
-
 *Essential commands*                             /C: Control, M: alt, S: ⌘/
 
   Save ............... =[C-x]= =[C-s]=    Help ..................... =[C-h]=
   Save as ............ =[C-x]= =[C-w]=    Cancel ................... =[C-g]=
-  Open a new file .... =[C-x]= =[C-f]=    Undo ..................... =[C-/]=
-  Browse directory ..... =[C-x]= =[d]=    Quit ............... =[C-x]= =[C-c]= 
+  Open a new file .... =[C-x]= =[C-f]=    Undo ..................... =[C-z]=
+  Quit ............... =[C-x]= =[C-c]=    Undo (alternate) ......... =[C-/]=
 
 
 *Other commands*                                     /[[info:emacs#Key%2520Bindings][ Other key bindings ]]/
@@ -333,12 +339,12 @@
   Kill from mark............ =[C-w]=    Kill from cursor.......... =[C-k]=
   Paste .................... =[C-y]=    Paste older ........ =[C-y]= =[M-y]=
 
-*Quick preferences*                                    /[[elisp:(customize-group%20'emacs)][ Full preferences ]]/
+*Quick preferences*                                    /[[elisp:(customize-group 'emacs)][ Full preferences ]]/
 
  [[elisp:menu-set-font][ Select ]]default font                [[elisp:display-line-numbers-mode][ Toggle ]]line numbers
  [[elisp:tool-bar-mode][ Toggle ]]tool bar                    [[elisp:toggle-truncate-lines][ Toggle ]]line wrap
  [[elisp:scroll-bar-mode][ Toggle ]]scroll bar                  [[elisp:blink-cursor-mode][ Toggle ]]blinking cursor
- [[elisp:menu-bar-mode][ Toggle ]]menu bar                     Select cursor:[[elisp:(set-default%20'cursor-type%20%20'(hbar%20.%202))][ HBar ]]|[[elisp:(set-default%20'cursor-type%20%20'(bar%20.%202))][ VBar ]]|[[elisp:(set-default%20'cursor-type%20'box)][ Box ]]
+ [[elisp:menu-bar-mode][ Toggle ]]menu bar                     Select cursor:[[elisp:(set-default 'cursor-type  '(hbar . 2))][ HBar ]]|[[elisp:(set-default 'cursor-type  '(bar . 2))][ VBar ]]|[[elisp:(set-default 'cursor-type 'box)][ Box ]]
 ")
 
 (org-mode)
