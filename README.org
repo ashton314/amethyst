@@ -11,15 +11,21 @@ Emacs is the most powerful text editor in the world. Beyond this, it's infinitel
 
 * Installation
 
- 1. Get yourself [[https://www.gnu.org/software/emacs/][Emacs]]
+ 1. Get yourself [[https://www.gnu.org/software/emacs/][GNU Emacs]] (it's free!)
  2. Download this repository
- 3. Load [[file:writer_entry.el][writer_entry.el]] in your =~/.emacs=
+ 3. Move [[file:writer_entry.el][writer_entry.el]] into your home directory and rename it =.emacs=
 
 *NOTE:* These instructions will improve over time; if you need help, please just [[https://github.com/ashton314/emacs-writer/issues/new][open an issue]] or send me an email. (See the [[Author]] section.)
 
 * Usage
 
-For now, run this in your shell:
+*Recommended for writers:* If you intend to use Emacs almost exclusively with this theme turned on, you can simply download [[file:writer_entry.el][writer_entry.el]] and move it into your home directory:
+
+#+begin_src bash
+cp writer_entry.el ~/.emacs
+#+end_src
+
+If you'd rather use this theme occasionally, the easiest way is to keep the file in this directory and turn it on like so:
 
 #+begin_src bash
 emacs -q -l writer_entry.el
