@@ -4,6 +4,11 @@ Writing should be all about the words. But word processors like MS Word, Google 
 
 Emacs is the most powerful text editor in the world. Beyond this, it's infinitely customizable. It's also [[https://www.fsf.org/about/what-is-free-software][Free/Libre Software]]. So why don't writers use it more? The default Emacs settings are a little difficult for non-technical users to get accustomed to. This setup aims to make the transition to Emacs a little easier.
 
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+[[/docs/welcome_screen.png]]
+
+*WARNING: This is a work in progress!*
+
 * Installation
 
  1. Get yourself [[https://www.gnu.org/software/emacs/][Emacs]]
@@ -11,6 +16,14 @@ Emacs is the most powerful text editor in the world. Beyond this, it's infinitel
  3. Load [[file:writer_entry.el][writer_entry.el]] in your =~/.emacs=
 
 *NOTE:* These instructions will improve over time; if you need help, please just [[https://github.com/ashton314/emacs-writer/issues/new][open an issue]] or send me an email. (See the [[Author]] section.)
+
+* Usage
+
+For now, run this in your shell:
+
+#+begin_src bash
+emacs -q -l writer_entry.el
+#+end_src
 
 * Description
 
@@ -21,6 +34,8 @@ Features:
  - Clean, distraction-free theme (Elegant Emacs, Nord)
  - Common keybindings that most users are familiar with (CUA-mode)
  - Starter set of packages to make Emacs a little nicer to use
+
+*WARNING: This is a work in progress!* I'm trying things out and tweaking things as I try them. *I do not consider this ready for general-use.* Don't set up your non-technical significant other with this unless you're willing to be tech support for them!
 
 * History
 
@@ -43,4 +58,4 @@ Elegant Emacs: Nicolas P. Rougier
  - [[https://www.gnu.org/][The GNU Project]]
  - [[https://www.gnu.org/software/emacs/][The Emacs Homepage]]
 
-This package is derived from Nicolas P. Rougier's beautiful [[https://github.com/rougier/elegant-emacs][elegant-emacs]] package. I also uses the 
+This package is derived in large part from Nicolas P. Rougier's beautiful [[https://github.com/rougier/elegant-emacs][elegant-emacs]] package. I also uses [[https://www.nordtheme.com/ports/emacs][Nord Theme]].
