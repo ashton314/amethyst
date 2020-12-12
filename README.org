@@ -41,7 +41,7 @@ Features:
 
 My wife is a writer, and I wanted to help Emacs be less intimidating for her to use.
 
-I think using Free/Libre software is the ideal—I use it whenever I can—and Emacs is in some respects the FSF and GNU's flagship program. Emacs is what brought me to use free software, and I want to help others experience the joys of free software.
+I think using Free/Libre software is the ideal—I use it whenever I can—and Emacs is in some respects the [[https://fsf.org][FSF]] and [[https://gnu.org][GNU]]'s flagship program. Emacs is what brought me to use free software, and I want to help others experience the joys of free software.
 
 Most free software requires some detailed knowledge of computers to use effectively. There are plenty of memes about Arch Linux being difficult to use unless you really know what you're doing. I don't have a problem with this /per se/; these are power tools built for power users.
 
