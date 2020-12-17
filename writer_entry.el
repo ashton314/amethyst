@@ -66,7 +66,7 @@
 ;;                      'internal-border-width 24)
 
 ;; Line spacing, can be 0 for code and 1 or 2 for text
-(setq-default line-spacing 0)
+(setq-default line-spacing 2)
 
 ;; Underline line at descent position, not baseline position
 (setq x-underline-at-descent-line t)
@@ -132,7 +132,6 @@
 ;; Comment if you want to keep the modeline at the bottom
 (setq-default header-line-format mode-line-format)
 (setq-default mode-line-format'(""))
-
               
 ;; Vertical window divider
 (setq window-divider-default-right-width 3)
@@ -223,7 +222,6 @@
                              :color ,(face-foreground 'face-salient)
                              :style nil)
                       :inverse-video nil))
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -318,36 +316,42 @@
   "
 
 
-                           _Welcome to Emacs_
+                           *Welcome to Emacs*
 
 
+   Emacs is the most powerful text editor on the planet. While you
+   should be able to start working with Emacs as-is, any effort you
+   put into mastering its functions will reward you handsomely. Try
+   to get familiar with the *Essential Commands* first, and move on
+       to the *Other Commands* once you've got the hang of it.
 
-                             *Quick Links*
+
+			    *Quick Links*
 
 [[elisp:find-file][Create a new file]]        [[elisp:find-file-existing][Open an existing file]]        [[elisp:scratchpad][Open a scratchpad]]
 
 
-*Essential commands*                             /C: Control, M: alt, S: ⌘/
+*Essential Commands*                             /C: Control, M: alt, S: ⌘/
 
-  Save ............... =[C-x]= =[C-s]=    Help ..................... =[C-h]=
-  Save as ............ =[C-x]= =[C-w]=    Cancel ................... =[C-g]=
-  Open a new file .... =[C-x]= =[C-f]=    Undo ..................... =[C-z]=
-  Quit ............... =[C-x]= =[C-c]=    Undo (alternate) ......... =[C-/]=
+  Save ........... =[C-x]= =[C-s]=    Help ..................... =[C-h]=
+  Save as ........ =[C-x]= =[C-w]=    Cancel ................... =[C-g]=
+  Open new file .. =[C-x]= =[C-f]=    Undo ..................... =[C-z]=
+  Quit ........... =[C-x]= =[C-c]=    Undo (alternate) ......... =[C-/]=
 
 
-*Other commands*                                     /[[info:emacs#Key%2520Bindings][ Other key bindings ]]/
+*Other Commands*                                     /[[info:emacs#Key%2520Bindings][ Other key bindings ]]/
 
-  Search ................... =[C-s]=    Go to line ......... =[M-g]= =[M-g]=
-  Replace .................. =[M-%]=    Execute .................. =[M-x]=
+  Search ................. =[C-s]=    Go to line ......... =[M-g]= =[M-g]=
+  Replace ................ =[M-%]=    Execute command ............ =[M-x]=
   
-  Start of buffer .......... =[M-<]=    End of buffer ............ =[M->]=
-  Start of line ............ =[C-a]=    End of line .............. =[C-e]=
+  Start of buffer ........ =[M-<]=    End of buffer .............. =[M->]=
+  Start of line .......... =[C-a]=    End of line ................ =[C-e]=
 
-  Mark ................... =[C-spc]=    Copy from mark............ =[M-w]=
-  Kill from mark............ =[C-w]=    Kill from cursor.......... =[C-k]=
-  Paste .................... =[C-y]=    Paste older ........ =[C-y]= =[M-y]=
+  Mark ................. =[C-spc]=    Copy from mark.............. =[M-w]=
+  Kill from mark.......... =[C-w]=    Kill from cursor............ =[C-k]=
+  Paste .................. =[C-y]=    Paste older ........ =[C-y]= =[M-y]=
 
-*Quick preferences*                                    /[[elisp:(customize-group 'emacs)][ Full preferences ]]/
+*Quick Preferences Settings*                         /[[elisp:(customize-group 'emacs)][ Full preferences ]]/
 
  [[elisp:menu-set-font][ Select ]]default font                [[elisp:display-line-numbers-mode][ Toggle ]]line numbers
  [[elisp:tool-bar-mode][ Toggle ]]tool bar                    [[elisp:toggle-truncate-lines][ Toggle ]]line wrap
