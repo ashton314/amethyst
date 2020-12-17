@@ -148,6 +148,17 @@
    :underline  'unspecified :overline   'unspecified
    :box        'unspecified :inherit    style))
 
+;; Faces for the writer theme
+(defgroup writer nil
+  "Faces for the writer theme"
+  :prefix "writer-face-"
+  :group 'faces)
+
+;; Custom faces
+(defface face-faded nil
+  "Used for menubars"
+  :group 'writer)
+
 ;; Modeline
 (defun set-modeline-faces ()
 
@@ -157,7 +168,7 @@
                                 :underline (face-foreground 'default))
   (set-face-attribute 'mode-line nil
                       :height 10
-                      :underline (face-foreground 'default)
+                      :underline (face-foreground 'face-faded)
                       :overline nil
                       :box nil 
                       :foreground (face-background 'default)
@@ -292,6 +303,7 @@
 (defun set-nordic ()
   "Set Nord theme with pretty modeline from elegance"
   (interactive)
+  (set-face-attribute 'face-faded nil :foreground "#d8dee9")
   (load-theme 'nord t)
   (set-modeline-faces))
 
