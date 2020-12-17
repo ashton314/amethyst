@@ -52,13 +52,18 @@
 ;; Basic look and feel from elegance.el
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (set-face-font 'default "Input Mono 14")
+
+;; (setq default-frame-alist '((width . 80) (height . 30) (fullscreen . maximized)))
+
 (setq default-frame-alist
-      (append (list '(width  . 72) '(height . 40)
-                    '(vertical-scroll-bars . nil)
-                    '(internal-border-width . 24)
+      (append (list '(vertical-scroll-bars . nil)
+                    '(internal-border-width . 48)
+		    '(width  . 80) '(height . 0.9)
+		    '(left . 0.5) '(top . 0)
                     '(font . "Input Mono 14"))))
-(set-frame-parameter (selected-frame)
-                     'internal-border-width 24)
+
+;; (set-frame-parameter (selected-frame)
+;;                      'internal-border-width 24)
 
 ;; Line spacing, can be 0 for code and 1 or 2 for text
 (setq-default line-spacing 0)
@@ -115,8 +120,13 @@
          " %b "
          (if (and buffer-file-name (buffer-modified-p))
              (propertize "(modified)" 'face `(:inherit face-faded)))))
+
        (format-mode-line
-        (propertize "%4l:%2c  " 'face `(:inherit face-faded)))))))
+        (list
+	 (propertize "[ L %l : C %c ]  " 'face `(:inherit face-faded))
+	 (propertize
+	  (format "%d Words  " (count-words (point-min) (point-max)))
+	  'face `(:inherit face-faded))))))))
 
 
 ;; Comment if you want to keep the modeline at the bottom
@@ -301,8 +311,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Startup
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq default-frame-alist '((width . 80) (height . 30) (fullscreen . fullheight)))
 
 (setq org-confirm-elisp-link-function nil)
 
