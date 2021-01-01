@@ -275,6 +275,7 @@
   :bind
   ("C-x g" . magit-status)
   ("s-g" . magit-status))
+(use-package pandoc-mode)
 
 (global-auto-revert-mode)
 
@@ -288,6 +289,7 @@
                  '(lambda ()
 		    (toggle-truncate-lines -1)
 		    (turn-on-visual-line-mode)
+		    (pandoc-mode)
 		    ;; I don't think this is necessary with visual-line-mode turned on
 		    ;(toggle-word-wrap t)
 		    )))
