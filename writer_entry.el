@@ -383,5 +383,6 @@
  '(enable-recursive-minibuffers t)
  '(find-file-visit-truename t)
  '(frame-resize-pixelwise t)
+ '(sentence-end-double-space nil)
  '(initial-major-mode 'text-mode)
  '(initial-scratch-message writer-startup-message))
