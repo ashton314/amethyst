@@ -375,6 +375,10 @@
 
 (org-mode)
 
+;; This is a kluge to move the cursor to the beginning of the file in
+;; the scratch buffer.
+(run-with-idle-timer 0 nil '(lambda () (goto-char (point-min))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
