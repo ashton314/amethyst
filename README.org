@@ -19,7 +19,7 @@ Emacs is the most powerful text editor in the world. It gets out of your way and
 
 * Usage
 
-*Recommended for writers:* If you intend to use Emacs almost exclusively with this theme turned on, you can simply download [[file:writer_entry.el][writer_entry.el]] and move it into your home directory:
+*Recommended for writers:* If you intend to use Emacs almost exclusively with this theme turned on, you can simply download [[file:amethyst.el][amethyst.el]] and move it into your home directory:
 
 #+begin_src bash
 cp amethyst.el ~/.emacs
