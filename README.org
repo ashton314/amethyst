@@ -1,4 +1,4 @@
-#+TITLE: Emacs Writer
+#+TITLE: Amethyst
 
 Writing should be all about the words. But word processors like Microsoft Word, Google Docs, or Apple's Pages force you to think about formatting as you compose.
 
@@ -13,7 +13,7 @@ Emacs is the most powerful text editor in the world. It gets out of your way and
 
  1. Get yourself [[https://www.gnu.org/software/emacs/][GNU Emacs]] (it's free!)
  2. Download this repository
- 3. Move [[file:writer_entry.el][writer_entry.el]] into your home directory and rename it =.emacs=
+ 3. Move [[file:amethyst.el][amethyst.el]] into your home directory and rename it =.emacs=
 
 *NOTE:* These instructions will improve over time; if you need help, please just [[https://github.com/ashton314/emacs-writer/issues/new][open an issue]] or send me an email. (See the [[Author]] section.)
 
@@ -22,13 +22,13 @@ Emacs is the most powerful text editor in the world. It gets out of your way and
 *Recommended for writers:* If you intend to use Emacs almost exclusively with this theme turned on, you can simply download [[file:writer_entry.el][writer_entry.el]] and move it into your home directory:
 
 #+begin_src bash
-cp writer_entry.el ~/.emacs
+cp amethyst.el ~/.emacs
 #+end_src
 
 If you'd rather use this theme occasionally, the easiest way is to keep the file in this directory and turn it on like so:
 
 #+begin_src bash
-emacs -q -l writer_entry.el
+emacs -q -l amethyst.el
 #+end_src
 
 * Description
@@ -53,9 +53,13 @@ Most free software requires some detailed knowledge of computers to use effectiv
 
 But if we want to help spread free software in the world, then we should try to make some of that software more user-friendly so that people who don't want to tweak their configuration and just have things /work/ so they can get their work done. This package is my small contribution to that effort.
 
+* Changelog
+*** 2021-03-02
+Change name from *Emacs Writer* to *Amethyst*. I've got a bunch of package ideas, and I think I'll name them after semi-precious stones.
+
 * Author
 
-Emacs Writer: Ashton Wiersdorf
+Amethyst: Ashton Wiersdorf
 
 Elegant Emacs: Nicolas P. Rougier
 

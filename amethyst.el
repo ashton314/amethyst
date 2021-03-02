@@ -1,5 +1,5 @@
-;; Entry point for my writer-focused mode
-;; Copyright 2020 Ashton Wiersdorf
+;; Amethyst - An Emacs starter-kit aimed at writers
+;; © 2020 Ashton Wiersdorf
 ;;
 ;; Sizable portions of this code are derived from the elegance theme
 ;; by Nicolas P. Rougier. Modifications made starting 8 December 2020.
@@ -37,7 +37,6 @@
 (setq pop-up-windows nil)
 
 (tool-bar-mode 0)
-(tooltip-mode  0)
 (scroll-bar-mode 0)
 
 (require 'uniquify)
