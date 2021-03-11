@@ -50,19 +50,21 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Basic look and feel from elegance.el
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(set-face-font 'default "Input Mono 14")
+(defun use-first-font (font-list)
+  "Try the fonts in order. If it exists, use it. Otherwise, move to the next one."
+  (cond
+   ((or (eq window-system nil) (eq font-list nil)) nil)
+   ((x-list-fonts (car font-list))
+    (set-face-attribute 'default nil :height 121 :font (car font-list)))
+   (t (use-first-font (cdr font-list)))))
 
-;; (setq default-frame-alist '((width . 80) (height . 30) (fullscreen . maximized)))
+(use-first-font '("Input Mono" "Fira Code"))
 
 (setq default-frame-alist
       (append (list '(vertical-scroll-bars . nil)
                     '(internal-border-width . 48)
 		    '(width  . 80) '(height . 0.9)
-		    '(left . 0.5) '(top . 0)
-                    '(font . "Input Mono 14"))))
-
-;; (set-frame-parameter (selected-frame)
-;;                      'internal-border-width 24)
+		    '(left . 0.5) '(top . 0))))
 
 ;; Line spacing, can be 0 for code and 1 or 2 for text
 (setq-default line-spacing 2)
@@ -89,19 +91,23 @@
 
 ;; No fringe but nice glyphs for truncated and wrapped lines
 (fringe-mode '(0 . 0))
-(defface fallback '((t :family "Fira Code Light"
+;; TODO: I'm considering deleting this, because I'll have wrap mode
+;; turned on by default, so the only people who will see wrapped lines
+;; are those who should *know* what they're doing. I suppose there
+;; might be some who write really, really long words in a narrow
+;; window, so it might be a good idea anyway...
+
+(defface fallback '((t :family (if (x-list-fonts "Fira Code Light") "Fira Code Light" nil)
                        :inherit 'face-faded)) "Fallback")
 (set-display-table-slot standard-display-table 'truncation
                         (make-glyph-code ?… 'fallback))
 (set-display-table-slot standard-display-table 'wrap
                         (make-glyph-code ?↩ 'fallback))
 (set-display-table-slot standard-display-table 'selective-display
-                        (string-to-vector " …"))
+			(string-to-vector " …"))
 
 ;; Mode line (this might be slow because of the "☰" that requires substitution)
 ;; This line below makes things a bit faster
-(set-fontset-font "fontset-default"  '(#x2600 . #x26ff) "Fira Code 16")
-
 (define-key mode-line-major-mode-keymap [header-line]
   (lookup-key mode-line-major-mode-keymap [mode-line]))
 
