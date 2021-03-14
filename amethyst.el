@@ -83,8 +83,8 @@
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
 
-;; No Tooltips
-(tooltip-mode 0)
+;; Ensure Tooltips
+(tooltip-mode)
 
 ;; Paren mode is part of the theme
 (show-paren-mode t)
