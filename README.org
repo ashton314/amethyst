@@ -13,7 +13,10 @@ Emacs is the most powerful text editor in the world. It gets out of your way and
 
  1. Get yourself [[https://www.gnu.org/software/emacs/][GNU Emacs]] (it's free!)
  2. Download this repository
- 3. Move [[file:amethyst.el][amethyst.el]] into your home directory and rename it =.emacs=
+ 3. Put the following into your [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html#Init-File][init file]] (usually =~/.emacs=):
+    #+begin_src elisp
+(load-file "~/path/to/downloaded/repo/amethyst.el")
+    #+end_src
 
 *NOTE:* These instructions will improve over time; if you need help, please just [[https://github.com/ashton314/emacs-writer/issues/new][open an issue]] or send me an email. (See the [[Author]] section.)
 
@@ -30,6 +33,16 @@ If you'd rather use this theme occasionally, the easiest way is to keep the file
 #+begin_src bash
 emacs -q -l amethyst.el
 #+end_src
+
+** For those already familiar with Emacs
+
+If you have used Emacs in the past, this is good to know. If this is your first time with Emacs, then you can safely skip this section.
+
+Amethyst uses [[https://github.com/raxod502/straight.el][straight.el]] for package management. That means that if you want to try out Amethyst along side your current set up, note that this /will/ create the folder =~/.emacs.d/straight= and put all the dependencies in there. I have yet to hear of reports of this actually messing up someone else's configuration; even those that use straight have not reported any problems. (I use straight for my personal config, and I've been just fine.)
+
+Please open an issue if you come across anything that messes up your config.
+
+Once you're done taking Amethyst out for a spin, you can safely delete the =~/.emacs.d/straight/= folder. It will get rebuilt if you decide to turn Amethyst back on again.
 
 * Description
 
