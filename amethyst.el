@@ -352,23 +352,23 @@
 
 *Essential Commands*                             /C: Control, M: alt, S: ⌘/
 
-  Save ........... =[C-x]= =[C-s]=    Help ..................... =[C-h]=
-  Save as ........ =[C-x]= =[C-w]=    Cancel ................... =[C-g]=
-  Open new file .. =[C-x]= =[C-f]=    Undo ..................... =[C-z]=
-  Quit ........... =[C-x]= =[C-c]=    Undo (alternate) ......... =[C-/]=
+  Save ................... \\[save-buffer]	Help ....................... C-h
+  Save as ................ \\[write-file]	Cancel command ............. \\[keyboard-quit]
+  Open new file .......... \\[find-file]	Undo ....................... \\[undo]
+  Quit ................... \\[save-buffers-kill-terminal]
 
 
 *Other Commands*                                     /[[info:emacs#Key%2520Bindings][ Other key bindings ]]/
 
-  Search ................. =[C-s]=    Go to line ......... =[M-g]= =[M-g]=
-  Replace ................ =[M-%]=    Execute command ............ =[M-x]=
+  Search ................. \\[isearch-forward]		Go to line ................. \\[goto-line]
+  Replace ................ \\[query-replace]		Execute command ............ \\[execute-extended-command]
   
-  Start of buffer ........ =[M-<]=    End of buffer .............. =[M->]=
-  Start of line .......... =[C-a]=    End of line ................ =[C-e]=
+  Start of buffer ........ \\[beginning-of-buffer]		End of buffer .............. \\[end-of-buffer]
+  Start of line .......... \\[beginning-of-visual-line]		End of line ................ \\[end-of-visual-line]
 
-  Mark ................. =[C-spc]=    Copy from mark.............. =[M-w]=
-  Kill from mark.......... =[C-w]=    Kill from cursor............ =[C-k]=
-  Paste .................. =[C-y]=    Paste older ........ =[C-y]= =[M-y]=
+  Mark ................... \\[set-mark-command]		Copy from mark ............. \\[kill-ring-save]
+  Cut from mark .......... \\[kill-region]		Delete to end of line ...... \\[kill-line]
+  Paste .................. \\[yank]		Paste older ................ \\[cua-paste-pop]
 
 *Quick Preferences Settings*                         /[[elisp:(customize-group 'emacs)][ Full preferences ]]/
 
