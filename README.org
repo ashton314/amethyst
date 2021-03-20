@@ -5,9 +5,11 @@ Writing should be all about the words. But word processors like Microsoft Word, 
 Emacs is the most powerful text editor in the world. It gets out of your way and lets you work with your words, free from distraction. Beyond this, it's infinitely customizable. It's also [[https://www.fsf.org/about/what-is-free-software][Free/Libre Software]]. So why don't writers use it more? The default Emacs settings are a little difficult for non-technical users to get accustomed to. This setup aims to make the transition to Emacs a little easier.
 
 #+ATTR_HTML: :style margin-left: auto; margin-right: auto; :alt "Welcome splash screen"
+#+CAPTION: Amethyst welcome screen
 [[/docs/welcome_screen.png]]
 
 #+ATTR_HTML: :style margin-left: auto; margin-right: auto; :alt "Scratchpad with guidance"
+#+CAPTION: Scratchpad view
 [[/docs/scratch_screen.png]]
 
 *WARNING: This is a work in progress!*
