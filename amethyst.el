@@ -331,7 +331,7 @@
 
 (setq org-confirm-elisp-link-function nil)
 
-(defvar writer-startup-message
+(defvar amethyst--startup-message
   "
 
 
@@ -364,9 +364,9 @@
   Replace ................ \\[query-replace]		Execute command ............ \\[execute-extended-command]
   
   Start of buffer ........ \\[beginning-of-buffer]		End of buffer .............. \\[end-of-buffer]
-  Start of line .......... \\[beginning-of-visual-line]		End of line ................ \\[end-of-visual-line]
+  Start of line .......... C-a		End of line ................ C-e
 
-  Mark ................... \\[set-mark-command]		Copy from mark ............. \\[kill-ring-save]
+  Mark ................... C-<Space>	Copy from mark ............. \\[kill-ring-save]
   Cut from mark .......... \\[kill-region]		Delete to end of line ...... \\[kill-line]
   Paste .................. \\[yank]		Paste older ................ \\[cua-paste-pop]
 
@@ -378,11 +378,18 @@
  [[elisp:menu-bar-mode][ Toggle ]]menu bar                     Select cursor:[[elisp:(set-default 'cursor-type  '(hbar . 2))][ HBar ]]|[[elisp:(set-default 'cursor-type  '(bar . 2))][ VBar ]]|[[elisp:(set-default 'cursor-type 'box)][ Box ]]
 ")
 
-(org-mode)
+(defvar amethyst--splash-buffer (get-buffer-create "* Amethyst *"))
 
-;; This is a kluge to move the cursor to the beginning of the file in
-;; the scratch buffer.
-(run-with-idle-timer 0 nil '(lambda () (goto-char (point-min))))
+(defun amethyst--splash-screen ()
+  "Render the splash screen for Amethyst."
+  (interactive)
+  (with-current-buffer amethyst--splash-buffer
+    (insert (substitute-command-keys amethyst--startup-message))
+    (goto-char (point-min))
+    (org-mode)
+    (current-buffer)))
+
+(setq initial-buffer-choice #'amethyst--splash-screen)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -393,5 +400,4 @@
  '(find-file-visit-truename t)
  '(frame-resize-pixelwise t)
  '(sentence-end-double-space nil)
- '(initial-major-mode 'text-mode)
- '(initial-scratch-message writer-startup-message))
+ '(initial-major-mode 'text-mode))
